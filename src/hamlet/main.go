@@ -10,6 +10,7 @@ import (
 type Play struct {
 	Title      string       `xml:"title"`
 	Playwright string       `xml:"playwright"`
+	Pubdate    string       `xml:"pubdate"`
 	Personae   PersonaeType `xml:"personae"`
 	Acts       []Act        `xml:"act"`
 }
@@ -63,6 +64,7 @@ func main() {
 
 	fmt.Printf("%s\n", doc.Title)
 	fmt.Printf("%s\n", doc.Playwright)
+	fmt.Printf("%s\n", doc.Pubdate)
 
 	println("\nCast\n")
 
@@ -80,7 +82,7 @@ func main() {
 				for _, line := range speech.Lines {
 					println(line)
 				}
-				println("\n")
+				println()
 			}
 			println("\n")
 		}
